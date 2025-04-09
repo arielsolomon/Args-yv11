@@ -1,0 +1,1 @@
+docker run -it --rm -e DISPLAY=$DISPLAY --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix -v /Data/Arg:/work -w '/work/' ultralytics_yv11:latest
