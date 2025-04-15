@@ -1,0 +1,31 @@
+# MOT17 Dataset Configuration (YOLO-compatible)
+# Path: /path/to/your/dataset/MOT17.yaml
+
+# ----- Dataset Paths -----
+path: ../MOT17  # Root dataset directory
+train: train          # Relative to 'path' (images+labels for training)
+val: train            # Use same as train for tracking evaluation
+test: train            # Test set (if available)
+
+# ----- Class Names -----
+names: 
+  0: pedestrian
+  1: person
+  2: bicycle
+  3: car
+  4: motorcycle
+  5: bus
+  6: truck
+
+# ----- MOT-Specific Settings -----
+# Ground truth format (required for tracking evaluation)
+gt: 
+  train: labels/gt.txt  # Relative to 'path/train'
+  val: labels/gt.txt    # Relative to 'path/val'
+
+# ----- Tracking Parameters -----
+tracking:
+  format: MOT          # MOT Challenge format
+  eval_split: val      # Split to evaluate on
+  conf_thresh: 0.5     # Detection confidence threshold
+  iou_thresh: 0.5      # Intersection-over-Union threshold
